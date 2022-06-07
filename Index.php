@@ -177,14 +177,14 @@
                             <div class="titre-sf"><p>Script :</p></div>
                             <div class="logos-sf">
                                 <img class="img-comp" src="./img/js.png" alt="logo Javascript"></img>
-                                <img class="img-comp" src="./img/jquery2.png" alt="logo JQuery"></img>
+                                <img class="img-comp" src="./img/jquery.png" alt="logo JQuery"></img>
                                 <img class="img-comp" src="./img/batch.png" alt="logo fichier .bat"></img>
                             </div>
                         </div>
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>BDD :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/mysql2.png" alt="logo MySql"></img>
+                                <img class="img-comp" src="./img/mysql.png" alt="logo MySql"></img>
                                 <img class="img-comp" src="./img/sqlite.png" alt="logo SQLite"></img>
                                 <img class="img-comp" src="./img/mariadb.png" alt="logo MariaDb"></img>
                                 <img class="img-comp" src="./img/informix.png" alt="logo Informix"></img>
