@@ -100,7 +100,10 @@
         <div id="fullpage">
 
             <section id="accueil_" class="vertical-scrolling" title="accueil">
-                <p id="accroche1" class="accroche_1 blanc"><span class="rouge">Aymeric</span> Guinot</p>
+                <div class="text middle accroche_1" data-text="Guinot Aymeric">
+                    <span class="rouge">Guinot</span> Aymeric
+                </div>
+                <!--<p id="accroche1" class="accroche_1 blanc"><span class="rouge">Aymeric</span> Guinot</p>-->
                 <p id="accroche2" class="accroche_2 blanc">Développeur Web <span class="heartbeat rouge">Full-stack</span></p>
                 <img class="deco_pc" src="./img/laptop.png" alt="image d'un pc, une tablette et un smartphone"></img>
                 <div id="scroll_down" class="btn_scroll"><a href="#a_propos"><span></span></a></div>
@@ -217,6 +220,13 @@
 
             <section id="portfolio_" class="vertical-scrolling" title="portfolio">
 
+                <div class="entrelacs-G">
+                    <img class="red-entrelacs-G" src="./img/entrelacs_G.png" alt="entrelacs celtes rouges"></img>
+                </div>
+                <div class="entrelacs-D">
+                    <img class="red-entrelacs-D" src="./img/entrelacs_D.png" alt="entrelacs celtes rouges"></img>
+                </div>
+
                 <div class="titre-portfolio">
                     <p class="titre_presentation"><span class="rouge heartbeat">Portfolio</span></p>
                 </div>
@@ -243,7 +253,8 @@
                                     <p class="blanc">Jadoo (HTML/CSS)</p>
                                     <p class="blanc">Intégration d'une maquette Figma.</p>
                                     <p class="blanc">Premier projet de la formation afin de mettre en pratique les cours de HTML/CSS vus en parallèle.</p>
-                                    <a href="https://www.aymeric-guinot-dev.com/formation/jadoo_1/index.html" target="_blank"><p>Visiter le site</p></a>
+                                    <p><a href="https://www.aymeric-guinot-dev.com/formation/jadoo_1/index.html" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
+                                    <a href="https://github.com/aguinot58/Cours_Jadoo" target="_blank">GitHub</a></p>
                                 </div>
                             </article>
 
@@ -260,7 +271,8 @@
                                     <p class="blanc">Premier projet en binômes, avec les premiers pas sur le travail collaboratif avec Git/GitHub,
                                         réflexion à plusieurs au niveau de la conception du site, sur la répartition des tâches, etc.
                                     </p>
-                                    <a href="https://www.aymeric-guinot-dev.com/formation/voyages/index.html" target="_blank"><p>Visiter le site</p></a>
+                                    <p><a href="https://www.aymeric-guinot-dev.com/formation/voyages/index.html" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
+                                    <a href="https://github.com/aguinot58/ACS_Voyages" target="_blank">GitHub</a></p>
                                 </div>
                             </article>
 
@@ -278,7 +290,8 @@
                                         pour venir y ajouter une base de données, afin le contenu de la page à partir de celle-ci, mise en place du fonctionnement 
                                         du formulaire de contact, et le back-office. 
                                     </p>
-                                    <a href="" target="_blank"><p>Visiter le site</p></a>
+                                    <p><a href="" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
+                                    <a href="https://github.com/aguinot58/Jadoo_PHP" target="_blank">GitHub</a></p>
                                 </div>
                             </article>
 
@@ -296,7 +309,8 @@
                                         Allociné, sur le sujet de notre choix, avec création d'un back-office, en utilisant
                                         au choix, Bootstrap ou Tailwind.
                                     </p>
-                                    <a href="" target="_blank"><p>Visiter le site</p></a>
+                                    <p><a href="" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
+                                    <a href="https://github.com/aguinot58/Retro_Games" target="_blank">GitHub</a></p>
                                 </div>
                             </article>
 
@@ -325,7 +339,7 @@
                     </div>
 
                 </div>
-
+            
             </section>
 
             <section id="contact_" class="vertical-scrolling" title="contact">
@@ -341,7 +355,7 @@
                     //} else {
                 echo '
                 <div class="conteneur-form-cont">
-                    <div class="titre-portfolio">
+                    <div class="titre-formulaire">
                         <p class="titre_presentation"><span class="rouge heartbeat">Formulaire de contact</span></p>
                     </div>
                     <div class="form-gauche">
@@ -366,10 +380,7 @@
                             </div>
                             <p><span class="rouge">*</span> Champs obligatoires.</p>
                             <!--<div class="g-recaptcha" data-sitekey="6Lf0uTsgAAAAAK15LwCiY82iy-CLNLKpkc2kyuO3"></div>-->
-                            <button class="btn-valide-form-connexion bouton" value="Submit">
-                                <img src="./img/bouton_formulaire_coche.svg" alt="Icon coche">
-                                <span>Envoyer</span>
-                            </button>
+                            <button class="skew-button"><span>Envoyer</span></button>
                         </form>
                     </div>
                 </div>';

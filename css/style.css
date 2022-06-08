@@ -271,12 +271,51 @@ footer .pied a:visited{
     margin-right: auto;
 }
 
+
+
 /* Section accueil */
 #accueil_{
     text-align: center;
     padding-top: 40px;
 }
 
+
+/* effet glitch */
+.middle {
+    position: absolute;
+    top: 5%;
+    left: 31.5%;
+    transform: translate(-50%, -50%);
+}
+  
+.text {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 14px;
+}
+  
+.text::before, .text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+  
+.text::before {
+    color: #ff00c1;
+    animation: glitch-effect 3s infinite;
+}
+  
+.text::after {
+    color: #3498db;
+    animation: glitch-effect 2s infinite;
+}
+  
+  
 #accroche1{
     font-size: 5vw;
     margin-bottom: 40px;
@@ -284,12 +323,14 @@ footer .pied a:visited{
 
 #accroche2{
     font-size: 3vw;
+    margin-top: 120px;
 }
 
 .deco_pc{
     width: 50%;
 }
 
+/* bouton scroll down */
 #scroll_down{ 
     background: url(https://picsum.photos/1200/800?image=901) center center / cover no-repeat;
 }
@@ -487,8 +528,17 @@ footer .pied a:visited{
     justify-content: center;
 }
 
+canvas{
+    filter: blur(1px);
+    z-index: -1;
+}
+
+.titre-portfolio{
+    display: none;
+}
+
 .conteneur-sup-projets{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 70%;
     margin-left: auto;
@@ -582,7 +632,7 @@ figure{
     position: absolute;
     font-size: 35px;
     color: rgba(253, 82, 82, 0.8);
-    background-color: rgba(255, 255, 255, 0.418);
+    background-color: rgb(10, 10, 10);
     padding: 10px;
     z-index: 10;
     display: block;
@@ -598,6 +648,26 @@ figure{
     top: 15vh;
 }
 
+.entrelacs-G, .entrelacs-D{
+    display: none;
+}
+
+.red-entrelacs-G, .red-entrelacs-D{
+    width: 250px;
+    position: relative;
+    top: 15vh;
+}
+
+.red-entrelacs-G{
+    float: left;
+    left: 10vw;
+}
+
+.red-entrelacs-D{
+    float: right;
+    right: 10vw;
+}
+
 
 
 
@@ -609,8 +679,11 @@ figure{
     justify-content: center;
 }
 
-#contact_ .conteneur-form-cont{
+.titre-formulaire, .form-gauche{
     display: none;
+}
+
+#contact_ .conteneur-form-cont{
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -625,6 +698,9 @@ figure{
 #contact_ .conteneur-form-cont .form-gauche #form-contact{
     display: flex;
     flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+    justify-content: center;
 }
 
 #contact_ .formulaire-contact-champ {
@@ -702,6 +778,73 @@ figure{
     right: 200px;
 }
 
+/* css bouton formulaire */
+.skew-button {
+    cursor: pointer;
+    outline: none;
+    transform: translate3d(-50%, -50%, 0);
+    backface-visibility: hidden;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-top: 35px;
+    margin-left: 8vw;
+}
+.skew-button span {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px 50px;
+    z-index: 3;
+}
+.skew-button:before, .skew-button span:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) skewX(-20deg);
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(255, 100, 100);
+    z-index: 2;
+}
+.skew-button span:before {
+    display: block;
+    transform: translate(-50%, -50%) skew(-20deg);
+    transform-origin: center center;
+    z-indeX: -1;
+}
+.skew-button:after {
+    transition: all 100ms ease-out;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: skewX(-20deg) scaleX(0);
+    width: 100%;
+    height: 100%;
+    background-color: #760e1f;
+    border: 1px solid transparent;
+    z-index: 1;
+}
+.skew-button:hover span:before {
+    animation: fill 0.5s ease-out;
+    animation-fill-mode: forwards;
+}
+.skew-button:hover:after {
+    animation: swoosh 0.7s ease-in;
+}
+.skew-button:active:before {
+    background-color: #030d1b;
+}
 
 
 
@@ -742,3 +885,5 @@ figure{
     text-decoration: none;
     color: rgb(255, 100, 100);
 }
+
+

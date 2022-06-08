@@ -731,3 +731,64 @@
   }
 }
 
+
+
+/*----------------------------------------------------------------------------------*/
+/* Animations bouton formulaire */
+@keyframes swoosh {
+    0% {
+        transform-origin: left center;
+   }
+    20% {
+        transform: skewX(-20deg) scaleX(1);
+        transform-origin: left center;
+   }
+    21% {
+        transform-origin: right center;
+   }
+    50% {
+        transform: skewX(-20deg) scaleX(0);
+        transform-origin: right center;
+   }
+}
+@keyframes fill {
+    0% {
+        background-color: rgba(14, 56, 118, 0);
+   }
+    20% {
+        opacity: 0.5;
+        border-width: 15px;
+        border-color: #092248;
+   }
+    100% {
+        opacity: 0.5;
+        border-width: 1px;
+        background-color: rgba(118, 14, 54, 0.5);
+   }
+}
+
+
+/*----------------------------------------------------------------------------------*/
+/* Animations glitch accueil */
+@keyframes glitch-effect {
+  0% {
+    left: -2px;
+    top: -2px;
+  }
+  25% {
+    left: 2px;
+    top: 0px;
+  }
+  50% {
+    left: -1px;
+    top: 2px;
+  }
+  75% {
+    left: 1px;
+    top: -1px;
+  }
+  100% {
+    left: 0px;
+    top: -2px;
+  }
+}
