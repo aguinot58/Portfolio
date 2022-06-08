@@ -1,0 +1,192 @@
+/* Version Mobile */
+@media all and (max-width:656px) {
+
+    /************* Header **************/
+    header .conteneur-header{
+        width: 100%;
+    }
+
+    header .conteneur-header .conteneur-nav .nav-bar{
+        display: none;
+    }
+
+    header .conteneur-header .conteneur-nav .burger{
+        display: block;
+    }
+
+    /************ Accueil *************/
+    .middle{
+        top: 10%;
+        left: 3%;
+    }
+
+    #accroche2{
+        font-size: 28px;
+        margin-top: 250px;
+        margin-bottom: 50px;
+    }
+    
+    .deco_pc{
+        width: 60%;
+    }
+
+
+    /************ A Propos ***********/
+    #a_propos_{
+        padding-top: 0px;
+    }
+
+    .conteneur-presentation{
+        flex-direction: column;
+        width: 80%;
+        justify-content: center;
+    }
+
+    .conteneur-presentation-txt{
+        margin-top: 50px;
+        width: 80%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .conteneur-presentation-txt p{
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .conteneur-presentation-img{
+        display: none;
+    }
+
+    .titre_presentation{
+        font-size: 30px;
+    }
+
+    #titre-presentation{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /*********** Mes compétences ****************/
+    .conteneur-brain, .conteneur-code{
+        display: none;
+    }
+
+    .conteneur-competences{
+        flex-direction: column;
+        padding-left: 40px;
+        padding-right: 20px;
+        width: 80%;
+    }
+
+    .conteneur-competences .conteneur-comp-trans, .conteneur-competences .conteneur-comp{
+        padding: 0px;
+        width: 100%;
+    }
+
+    .conteneur-competences .conteneur-comp-trans{
+        margin-bottom: 25px;
+    }
+
+    .conteneur-comp-trans ul{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0rem;
+    }
+
+    .conteneur-competences .conteneur-comp-trans h4, .conteneur-competences .conteneur-comp h4{
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .conteneur-competences .conteneur-comp-trans li, .conteneur-competences .conteneur-comp .conteneur-comp-sf .titre-sf p{
+        font-size: 16px;
+    }
+
+    .conteneur-competences .conteneur-comp .conteneur-comp-sf .titre-sf{
+        width: 85px;
+    }
+
+    .conteneur-competences .conteneur-comp .conteneur-comp-sf .logos-sf img{
+        width: 40px;
+    }
+
+    
+    /*********** Portfolio *****************/
+    .red-entrelacs-G, .red-entrelacs-D, .precedent, .precedent2, .suivant, .suivant2{
+        display: none;
+    }
+
+    .conteneur-sup-projets{
+        width: 100%;
+        padding: 0px;
+    }
+
+    .conteneur-titres-projets{
+        margin-top: 50px;
+    }
+
+    .conteneur-titres-projets p{
+        font-size: 20px;
+    }
+
+    article{
+        width: 80%;
+        height: auto;
+    }
+
+
+    /*********** Contact *************/
+    .red-knot-G, .red-knot-D{
+        display: none;
+    }
+
+    .skew-button{
+        position: absolute;
+        margin-top: 15px;
+        margin-left: -15px;
+    }
+
+    #contact_ .formulaire-contact-champ {
+        margin: 0 0 20px;
+    }
+
+    #contact_ .conteneur-form-cont .form-gauche{
+        width: 75%;
+    }
+
+    #contact_ .conteneur-form-cont .form-gauche #form-contact{
+        padding-left: 15px;
+    }
+
+
+    /********** Mentions légales ***********/
+    #mentions, #mentions2, #mentions3, #mentions4{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 40px;
+        text-align: center;
+        color: white;
+        font-size: 22px;
+    }
+    
+    #mentions4{
+        padding-bottom: 80px;
+    }
+    
+    #mentions h1{
+        font-size: 32px;
+    }
+    
+    #mentions p, #mentions2 p, #mentions3 p, #mentions4 p{
+        font-size: 24px;
+    }
+
+}

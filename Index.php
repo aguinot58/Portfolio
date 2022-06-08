@@ -58,12 +58,20 @@
                         <a href="./files/CV.pdf" download="newfilename">C.V.</a>
                     </div>
                     <div class="burger">
-
-
-
-
-
-
+                        <div id="menuToggle">
+                            <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <ul id="menu">
+                                <a href="#accueil" class="accueil"><li>Accueil</li></a>
+                                <a href="#a_propos" class="a_propos"><li>A propos</li></a>
+                                <a href="#competences" class="competence"><li>Compétences</li></a>
+                                <a href="#portfolio" class="folio"><li>Portfolio</li></a>
+                                <a href="#contact" class="contact"><li>Contact</li></a>
+                                <a href="./files/CV.pdf" download="newfilename"><li>C.V.</li></a>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,7 +120,7 @@
             <section id="a_propos_" class="vertical-scrolling" title="a_propos">
                 <div class="conteneur-presentation">
                     <div class="conteneur-presentation-txt">
-                        <p class="titre_presentation"><span class="titre_presentation rouge heartbeat">A propos de moi</span></p>
+                        <p id="titre-presentation" class="titre_presentation"><span class="titre_presentation rouge heartbeat">A propos de moi</span></p>
                         <p>Je me prénomme Aymeric, et je réside actuellement dans la Nièvre en Bourgogne.</p>
                         <p>Déjà titulaire d'un diplôme d'analyste-programmeur, 
                             après une dizaine d'années d'expérience à faire du développement logiciel en interne dans une PME, et suite à une opportunité de changement, 
