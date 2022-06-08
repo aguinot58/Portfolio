@@ -174,7 +174,7 @@
                             <div class="logos-sf">
                                 <img class="img-comp" src="./img/html.png" alt="logo html 5"></img>
                                 <img class="img-comp" src="./img/css.png" alt="logo css 3"></img>
-                                <img class="img-comp" src="./img/bootstrap.png" alt="logo Bootstrap"></img>
+                                <img class="img-comp" src="./img/Bootstrap.png" alt="logo Bootstrap"></img>
                                 <img class="img-comp" src="./img/sass.png" alt="logo SASS"></img>
                             </div>
                         </div>
