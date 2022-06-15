@@ -1,25 +1,30 @@
 <?php
- 
-// grab recaptcha library
-//require_once "./pages/recaptchalib.php";
 
-// your secret key
-//$secret = "6Lf0uTsgAAAAAMQNf_400jMYFxPYT8lHp8sZ_3O4";
- 
-// empty response
-//$response = null;
- 
-// check secret key
-//$reCaptcha = new ReCaptcha_($secret);
+    session_start();
 
-// if submitted check response
-//if ($_POST["g-recaptcha-response"]) {
-    //$response = $reCaptcha->verifyResponse(
-        //$_SERVER["REMOTE_ADDR"],
-        //$_POST["g-recaptcha-response"]
-    //);
-//}
- 
+    $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+
+    if ($curPageName == "index.php") {
+        $lien = "./";
+    } else {
+        $lien = "./../";
+    }
+
+    require $lien.'pages/conn_bdd.php';
+
+    if (!isset($_SESSION['envoi_message'])){
+        $_SESSION['envoi_message'] = false;
+    }
+
+    if ($_SESSION['envoi_message']== true){
+        ?>
+            <script type="text/javascript">
+                alert ("Message envoyé avec succès !");
+            </script>
+        <?php
+        $_SESSION['envoi_message']= false;
+    }
+
 ?>
 
 
@@ -41,7 +46,7 @@
         <header>
             <div class="conteneur-header">
                 <div class="conteneur-logo">
-                    <a href="Index.php">
+                    <a href="index.php">
                         <div class="logo">
                             <p class="rouge text-flicker-in-glow">A</p>
                             <p class="blanc">G</p>
@@ -141,10 +146,10 @@
             <section id="competences_" class="vertical-scrolling" title="competences">
 
                 <div class="conteneur-brain">
-                    <img class="brain" src="./img/brain.png" alt="Schéma avec des icones de compétences reliées à différentes zones du cerveau"></img>
+                    <img class="brain" src="./img/mimir.png" alt="Schéma avec des icones de compétences reliées à différentes zones du cerveau"></img>
                 </div>
                 <div class="conteneur-code">
-                    <img class="code" src="./img/html-code.png" alt="Exemple de code HTML"></img>
+                    <img class="code" src="./img/ada.svg" alt="Exemple de code HTML"></img>
                 </div>
 
                 <div class="pres-comp">
@@ -249,97 +254,166 @@
 
                         <div id="c-p-f" class="conteneur-projets-formation">
 
-                            <article id="formation-slide1" class="carte-projet">
-                                <figure>
-                                    <img
-                                        class="img-slide-formation"
-                                        src="./img/jadoo_1.jpg"
-                                        alt="Makis dans une assiette avec petit bol de sauce à côté et des baguettes sur le bol"
-                                    />
-                                </figure>
-                                <div class="desc-projet">
-                                    <p class="blanc">Jadoo (HTML/CSS)</p>
-                                    <p class="blanc">Intégration d'une maquette Figma.</p>
-                                    <p class="blanc">Premier projet de la formation afin de mettre en pratique les cours de HTML/CSS vus en parallèle.</p>
-                                    <p><a href="https://www.aymeric-guinot-dev.com/formation/jadoo_1/index.html" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
-                                    <a href="https://github.com/aguinot58/Cours_Jadoo" target="_blank">GitHub</a></p>
-                                </div>
-                            </article>
+                        <?php
 
-                            <article id="formation-slide2" class="carte-projet">
-                                <figure>
-                                    <img
-                                        class="img-slide-formation"
-                                        src="./img/acs.jpg"
-                                        alt="Paquebot de croisière en pleine mer"
-                                    />
-                                </figure>
-                                <div class="desc-projet">
-                                    <p class="blanc">ACS Voyages (HTML/CSS/JS)</p>
-                                    <p class="blanc">Premier projet en binômes, avec les premiers pas sur le travail collaboratif avec Git/GitHub,
-                                        réflexion à plusieurs au niveau de la conception du site, sur la répartition des tâches, etc.
-                                    </p>
-                                    <p><a href="https://www.aymeric-guinot-dev.com/formation/voyages/index.html" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
-                                    <a href="https://github.com/aguinot58/ACS_Voyages" target="_blank">GitHub</a></p>
-                                </div>
-                            </article>
+                            try{
 
-                            <article id="formation-slide3" class="carte-projet">
-                                <figure>
-                                    <img
-                                        class="img-slide-formation"
-                                        src="./img/jadoo_2.jpg"
-                                        alt="Paquebot de croisière en pleine mer"
-                                    />
-                                </figure>
-                                <div class="desc-projet">
-                                    <p class="blanc">Jadoo (PHP/JS)</p>
-                                    <p class="blanc">Premier projet PHP, consistant à reprendre le projet d'intégration de maquette Figma, 
-                                        pour venir y ajouter une base de données, afin le contenu de la page à partir de celle-ci, mise en place du fonctionnement 
-                                        du formulaire de contact, et le back-office. 
-                                    </p>
-                                    <p><a href="" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
-                                    <a href="https://github.com/aguinot58/Jadoo_PHP" target="_blank">GitHub</a></p>
-                                </div>
-                            </article>
+                                $sth = $conn->prepare('SELECT COUNT(id_proj) FROM projets WHERE typ_proj = "Formation" and visibilite_proj = 1');
+                                $sth->execute();
+                                //Retourne un tableau associatif pour chaque entrée de notre table avec le nom des colonnes sélectionnées en clefs
+                                $nb_projets_form_tot = $sth->fetchColumn();
 
-                            <article id="formation-slide4" class="carte-projet">
-                                <figure>
-                                    <img
-                                        class="img-slide-formation"
-                                        src="./img/retro.jpg"
-                                        alt="Paquebot de croisière en pleine mer"
-                                    />
-                                </figure>
-                                <div class="desc-projet">
-                                    <p class="blanc">Retro-gaming.com <br>(HTML/CSS/JS/PHP/Bootstrap)</p>
-                                    <p class="blanc">2nd projet en binômes: réalisation d'un site vitrine de type
-                                        Allociné, sur le sujet de notre choix, avec création d'un back-office, en utilisant
-                                        au choix, Bootstrap ou Tailwind.
-                                    </p>
-                                    <p><a href="" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
-                                    <a href="https://github.com/aguinot58/Retro_Games" target="_blank">GitHub</a></p>
-                                </div>
-                            </article>
+                                if ($nb_projets_form_tot > 0){
+
+                                    $sth = $conn->prepare('SELECT * FROM projets WHERE typ_proj = "Formation" and visibilite_proj = 1 ORDER BY id_proj');
+                                    $sth->execute();
+                                    //Retourne un tableau associatif pour chaque entrée de notre table avec le nom des colonnes sélectionnées en clefs
+                                    $projets = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+                                    $iteration = 0;
+
+                                    foreach ($projets as $projet) {
+
+                                        $iteration += 1;
+
+                                        echo '<article id="formation-slide'.$iteration.'" class="carte-projet">
+                                            <figure>
+                                                <img
+                                                    class="img-slide-formation"
+                                                    src="./img/'.$projet['img_proj'].'"
+                                                    alt="Capture d\'écran du projet "'.$projet['nom_proj'].'"
+                                                />
+                                            </figure>
+                                            <div class="desc-projet">
+                                                <p class="blanc">'.$projet['nom_proj'].'</p>
+                                                <p class="blanc">'.$projet['langage_proj'].'</p>
+                                                <p class="blanc">'.$projet['desc_proj'].'</p>
+                                                <p><a href="'.$projet['url_proj'].'" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
+                                                <a href="'.$projet['url_github_proj'].'" target="_blank">GitHub</a></p>
+                                            </div>
+                                        </article>';
+                                    }
+                                    
+                                } else {
+
+                                    echo '<article id="pro-slide1" class="carte-projet">
+                                            <figure>
+                                                <img
+                                                    class="img-slide-formation"
+                                                    src="./img/travaux.jpg"
+                                                    alt="Barrière et plots de chantier"
+                                                />
+                                            </figure>
+                                            <div class="desc-projet">
+                                                <p class="blanc">A venir</p>
+                                            </div>
+                                        </article>';
+
+                                }
+
+                            }
+                            catch(PDOException $e){
+    
+                                date_default_timezone_set('Europe/Paris');
+                                setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+                                $format1 = '%A %d %B %Y %H:%M:%S';
+                                $date1 = strftime($format1);
+                                $fichier = fopen('./log/error_log_index.txt', 'c+b');
+                                fseek($fichier, filesize('./log/error_log_index.txt'));
+                                fwrite($fichier, "\n\n" .$date1. " - Erreur import projets formation. Erreur : " .$e);
+                                fclose($fichier);
+            
+                                /*Fermeture de la connexion à la base de données*/
+                                $sth = null;
+                                $conn = null;
+                                            
+                            }
+
+                        ?>
 
                             <div class="precedent" onclick="ChangeSlide(-1)"><</div>
                             <div class="suivant" onclick="ChangeSlide(1)">></div>
-
+                        
                         </div>
 
                         <div id="c-p-p" class="conteneur-projets-pro">
-                            <article id="pro-slide1" class="carte-projet-P">
-                                <figure>
-                                    <img
-                                        class="img-slide-pro"
-                                        src="./img/travaux.jpg"
-                                        alt="Barrière et plots de chantier"
-                                    />
-                                </figure>
-                                <div class="desc-projet">
-                                    <p class="blanc">A venir</p>
-                                </div>
-                            </article>
+
+                            <?php
+
+                                try{
+
+                                    $sth = $conn->prepare('SELECT COUNT(id_proj) FROM projets WHERE typ_proj = "Professionnel" and visibilite_proj = 1');
+                                    $sth->execute();
+                                    //Retourne un tableau associatif pour chaque entrée de notre table avec le nom des colonnes sélectionnées en clefs
+                                    $nb_projets_pro_tot = $sth->fetchColumn();
+
+                                    if ($nb_projets_pro_tot > 0){
+
+                                        $sth = $conn->prepare('SELECT * FROM projets WHERE typ_proj = "Professionnel" and visibilite_proj = 1 ORDER BY id_proj');
+                                        $sth->execute();
+                                        //Retourne un tableau associatif pour chaque entrée de notre table avec le nom des colonnes sélectionnées en clefs
+                                        $projetsP = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+                                        $iterationP = 0;
+
+                                        foreach ($projetsP as $projetP) {
+
+                                            $iterationP += 1;
+
+                                            echo '<article id="pro-slide'.$iterationP.'" class="carte-projet-P">
+                                                <figure>
+                                                    <img
+                                                        class="img-slide-pro"
+                                                        src="./img/'.$projetP['img_proj'].'"
+                                                        alt="Capture d\'écran du projet "'.$projetP['nom_proj'].'"
+                                                    />
+                                                </figure>
+                                                <div class="desc-projet">
+                                                    <p class="blanc">'.$projetP['nom_proj'].'</p>
+                                                    <p class="blanc">'.$projetP['langage_proj'].'</p>
+                                                    <p class="blanc">'.$projetP['desc_proj'].'</p>
+                                                    <p><a href="'.$projetP['url_proj'].'" target="_blank">Visiter le site</a> <span class="blanc">/</span> 
+                                                    <a href="'.$projetP['url_github_proj'].'" target="_blank">GitHub</a></p>
+                                                </div>
+                                            </article>';
+                                        }
+
+                                    } else {
+
+                                        echo '<article id="pro-slide1" class="carte-projet-P">
+                                                <figure>
+                                                    <img
+                                                        class="img-slide-pro"
+                                                        src="./img/travaux.jpg"
+                                                        alt="Barrière et plots de chantier"
+                                                    />
+                                                </figure>
+                                                <div class="desc-projet">
+                                                    <p class="blanc">A venir</p>
+                                                </div>
+                                            </article>';
+
+                                    }
+
+                                }
+                                catch(PDOException $e){
+
+                                    date_default_timezone_set('Europe/Paris');
+                                    setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+                                    $format1 = '%A %d %B %Y %H:%M:%S';
+                                    $date1 = strftime($format1);
+                                    $fichier = fopen('./log/error_log_index.txt', 'c+b');
+                                    fseek($fichier, filesize('./log/error_log_index.txt'));
+                                    fwrite($fichier, "\n\n" .$date1. " - Erreur import projets pro. Erreur : " .$e);
+                                    fclose($fichier);
+
+                                    /*Fermeture de la connexion à la base de données*/
+                                    $sth = null;
+                                    $conn = null;
+                                                
+                                }
+
+                            ?>
 
                             <div class="precedent2" onclick="ChangeSlide2(-1)"><</div>
                             <div class="suivant2" onclick="ChangeSlide2(1)">></div>
@@ -357,11 +431,6 @@
                 <div class="red-D">
                     <img class="red-knot-D rotate-center-reverse" src="./img/red-knot.png" alt="entrelacs celtes rouges"></img>
                 </div>
-                <?php
-                    //if ($response != null && $response->success) {
-                        //echo "Bonjour " . $_POST["name"] . " (" . $_POST["email"] . "), merci pour votre message!";
-                    //} else {
-                echo '
                 <div class="conteneur-form-cont">
                     <div class="titre-formulaire">
                         <p class="titre_presentation"><span class="rouge heartbeat">Formulaire de contact</span></p>
@@ -370,7 +439,7 @@
                         <form id="form_contact" method="POST" onsubmit="return valider_form_contact()" action="./pages/gest_contact.php">
                             <div class="formulaire-contact-champ">
                                 <label for="nom">Nom <span class="rouge">*</span></label>
-                                <input id="nom" name="nom" type="text" onkeyup="validate(this)" pattern="^[A-Za-z]{1}[A-Za-z0-9]{5,49}$" maxlength="50" placeholder="Nom" required="">
+                                <input id="nom" name="nom" type="text" onkeyup="validate(this)" pattern="^[A-Za-z0-9 -àéèùêîôûïë]{3,50}$" maxlength="50" placeholder="Nom" required="">
                             </div>
                             <div class="formulaire-contact-champ">
                                 <label for="email">Adresse e-mail <span class="rouge">*</span></label>
@@ -379,28 +448,26 @@
                             </div>
                             <div class="formulaire-contact-champ">
                                 <label for="sujet">Sujet <span class="rouge">*</span></label>
-                                <input id="sujet" name="sujet" type="text" onkeyup="validate(this)" pattern="^[A-Za-z]{1}[A-Za-z0-9]{5,49}$" maxlength="50" placeholder="Sujet" 
+                                <input id="sujet" name="sujet" type="text" onkeyup="validate(this)" pattern="^[A-Za-z0-9 .+*/=\\(\\)-àéèùêîôûïë]{5,100}$" maxlength="100" placeholder="Sujet" 
                                             required="">
                             </div>
                             <div class="formulaire-contact-champ">
                                 <label for="message" >Message <span class="rouge">*</span></label>
-                                <textarea type="text" id="message" name="message" placeholder="Mon message" maxlength="500" rows="8" onkeyup="validate(this)" required></textarea>
+                                <textarea type="text" id="message" name="message" placeholder="Mon message" maxlength="500" rows="6" onkeyup="validate(this)" required></textarea>
                             </div>
                             <p><span class="rouge">*</span> Champs obligatoires.</p>
-                            <!--<div class="g-recaptcha" data-sitekey="6Lf0uTsgAAAAAK15LwCiY82iy-CLNLKpkc2kyuO3"></div>-->
-                            <button class="skew-button"><span>Envoyer</span></button>
+                            <div class="conteneur-pied-form">
+                                <button class="skew-button"><span>Envoyer</span></button>
+                            </div>
                         </form>
                     </div>
-                </div>';
-                //} ?>
+                </div>
             </section>
-
         </div>
 
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>
-        <script src="./javascript/main.js"></script>
-        <script src='https://www.google.com/recaptcha/api.js?hl=fr'></script>
+        <script src='./javascript/main.js'></script>
     </body>
 
 </html>

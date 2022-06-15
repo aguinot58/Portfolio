@@ -394,10 +394,10 @@ footer .pied a:visited{
 /* Contenu sections */
 .titre_presentation{
     font-size: 2.5vw;
-    margin-bottom: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
 }
 
 
@@ -530,11 +530,9 @@ footer .pied a:visited{
 }
 
 .conteneur-presentation-txt p{
-    color: white;
+    color: black;
     font-size: 1.05vw;
-    margin-bottom: 15px;
-    width: 80%;
-    text-align: justify;
+    width: 70%;
 }
 
 .conteneur-presentation-img{
@@ -643,7 +641,7 @@ footer .pied a:visited{
 .code{
     float: right;
     right: 8.5vw;
-    top: 275px;
+    top: 250px;
 }
 
 
@@ -756,7 +754,7 @@ figure{
     position: absolute;
     font-size: 35px;
     color: rgba(253, 82, 82, 0.8);
-    background-color: rgb(10, 10, 10);
+    background-color: rgba(10, 10, 10, 0.5);
     padding: 10px;
     z-index: 10;
     display: block;
@@ -837,7 +835,7 @@ figure{
 }
 
 #contact_ .formulaire-contact-champ {
-    margin: 0 0 30px;
+    margin: 0 0 20px;
 }
 
 #contact_ .formulaire-contact-champ label,
@@ -856,9 +854,10 @@ figure{
     border: none;
     border-bottom: 1px solid #c9c9c9;
     outline: 0;
-    font-size: 13px;
+    font-size: 18px;
     transition: transform 0.2s;
-    color: #888888;
+    color: #000000;
+    border: solid 1px rgb(10, 10, 10) ;
 }
 
 #contact_ .formulaire-contact-champ:hover input, #contact_ .formulaire-contact-champ:hover textarea {
@@ -900,6 +899,12 @@ figure{
 .red-knot-D{
     float: right;
     right: 200px;
+}
+
+.conteneur-pied-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 /* css bouton formulaire */
@@ -1011,3 +1016,56 @@ figure{
 }
 
 
+
+
+
+
+
+
+
+
+
+#a_propos_{
+    background-image: url(./../img/vikings_paysage_region.jpg);
+    background-size: cover;
+}
+
+#contact_{
+    background-image: url(./../img/viking.jpg);
+    background-size: cover;
+}
+
+#portfolio_{
+    background-image: url(./../img/989086.jpg);
+    background-size: cover;
+}
+
+.titre_presentation{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#contact_ .formulaire-contact-champ input, #contact_ .formulaire-contact-champ textarea {
+    border: solid 1px rgb(10, 10, 10) ;
+}
+
+.conteneur-presentation-txt{
+    background-image: url(./../img/torn.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.conteneur-presentation-txt p{
+    margin-bottom: 15px;
+    margin-left: 80px;
+    font-size: 0.9vw;
+}
+
+.conteneur-presentation-txt #titre-presentation{
+    text-align: center;
+    margin-top: 60px;
+}
+
+.conteneur-titres-projets p{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
