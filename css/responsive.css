@@ -44,7 +44,7 @@
 
     .conteneur-presentation-txt{
         margin-top: 50px;
-        width: 80%;
+        width: 90%;
         padding-top: 0px;
         padding-bottom: 0px;
         padding-left: 5px;
@@ -58,17 +58,39 @@
         width: 100%;
     }
 
-    .conteneur-presentation-img{
+    .conteneur-presentation-img, .conteneur-presentation-img img{
         display: none;
     }
 
     .titre_presentation{
         font-size: 30px;
+        margin-bottom: 10px;
     }
 
     #titre-presentation{
         display: flex;
         justify-content: center;
+    }
+
+    .conteneur-presentation-txt #titre-presentation{
+        text-align: center;
+        margin-top: 80px;
+        margin-left: 75px;
+    }
+
+    .conteneur-presentation-txt p{
+        margin-bottom: 15px;
+        margin-left: 80px;
+        font-size: 2.3vw;
+        width: 65%;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    .conteneur-presentation-txt{
+        padding-bottom: 120px;
     }
 
 
@@ -150,7 +172,7 @@
     .skew-button{
         position: absolute;
         margin-top: 15px;
-        margin-left: -15px;
+        margin-left: 135px;
     }
 
     #contact_ .formulaire-contact-champ {

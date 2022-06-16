@@ -135,7 +135,7 @@
                         <p>Vous pourrez suivre ici l'évolution de mes compétences au long de ma formation, puis dans un deuxième temps, mes futures 
                             réalisations professionnelles.
                         </p>
-                        <p>N'hesitez pas à me contacter par l'un des différents moyens mis à votre disposition sur ce site.</p>
+                        <p class="mobile">N'hesitez pas à me contacter par l'un des différents moyens mis à votre disposition sur ce site.</p>
                     </div>
                     <div class="conteneur-presentation-img">
                         <img class="portrait" src="./img/portrait.jpg" alt="photo de moi-même"></img>
