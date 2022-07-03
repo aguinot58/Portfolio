@@ -44,7 +44,7 @@
                                                 //Retourne un tableau associatif pour chaque entrée de notre table avec le nom des colonnes sélectionnées en clefs
                                                 $categories = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-                                                // on remplit la liste de sélection de console
+                                                // on remplit la liste de sélection de type de projet
                                                 foreach ($categories as $categorie) {
 
                                                     if ($categorie['typ_proj'] == $projet['typ_proj']){
@@ -62,7 +62,7 @@
                                                 $date1 = strftime($format1);
                                                 $fichier = fopen('./../log/error_log_modif_projet.txt', 'c+b');
                                                 fseek($fichier, filesize('./../log/error_log_modif_projet.txt'));
-                                                fwrite($fichier, "\n\n" .$date1. " - Erreur import liste des types de projetq. Erreur : " .$e);
+                                                fwrite($fichier, "\n\n" .$date1. " - Erreur import liste des types de projets. Erreur : " .$e);
                                                 fclose($fichier);
                             
                                                 //Fermeture de la connexion à la base de données
