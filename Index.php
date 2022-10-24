@@ -177,54 +177,56 @@
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>Front-end :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/html.png" alt="logo html 5"></img>
-                                <img class="img-comp" src="./img/css.png" alt="logo css 3"></img>
-                                <img class="img-comp" src="./img/Bootstrap.png" alt="logo Bootstrap"></img>
-                                <img class="img-comp" src="./img/sass.png" alt="logo SASS"></img>
+                                <img class="img-comp" src="./img/html.png" alt="logo html 5" title="HTML 5"></img>
+                                <img class="img-comp" src="./img/css.png" alt="logo css 3" title="CSS 3"></img>
+                                <img class="img-comp" src="./img/Bootstrap.png" alt="logo Bootstrap" title="Bootstrap"></img>
+                                <img class="img-comp" src="./img/less.jpg" alt="logo LESS" title="LESS"></img>
+                                <img class="img-comp" src="./img/vue.png" alt="logo Vue.js" title="Vue.js"></img>
                             </div>
                         </div>
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>Back-end :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/php.png" alt="logo PHP"></img>
+                                <img class="img-comp" src="./img/php.png" alt="logo PHP" title="PHP"></img>
+                                <img class="img-comp" src="./img/symfony-logo.png" alt="logo Symfony" title="Symfony"></img>
                             </div>
                         </div>
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>Script :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/js.png" alt="logo Javascript"></img>
-                                <img class="img-comp" src="./img/jquery.png" alt="logo JQuery"></img>
-                                <img class="img-comp" src="./img/batch.png" alt="logo fichier .bat"></img>
+                                <img class="img-comp" src="./img/js.png" alt="logo Javascript" title="Javascript"></img>
+                                <img class="img-comp" src="./img/jquery.png" alt="logo JQuery" title="JQuery"></img>
+                                <img class="img-comp" src="./img/batch.png" alt="logo fichier .bat" title="Batch"></img>
                             </div>
                         </div>
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>BDD :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/mysql.png" alt="logo MySql"></img>
-                                <img class="img-comp" src="./img/sqlite.png" alt="logo SQLite"></img>
-                                <img class="img-comp" src="./img/mariadb.png" alt="logo MariaDb"></img>
-                                <img class="img-comp" src="./img/informix.png" alt="logo Informix"></img>
+                                <img class="img-comp" src="./img/mysql.png" alt="logo MySql" title="MySQL"></img>
+                                <img class="img-comp" src="./img/sqlite.png" alt="logo SQLite" title="SQLite"></img>
+                                <img class="img-comp" src="./img/mariadb.png" alt="logo MariaDb" title="MariaDb"></img>
+                                <img class="img-comp" src="./img/informix.png" alt="logo Informix" title="Informix"></img>
                             </div>
                         </div>
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>Logiciels :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/git.png" alt="logo Git"></img>
-                                <img class="img-comp" src="./img/github.png" alt="logo GitHub"></img>
-                                <img class="img-comp" src="./img/visualstudio.png" alt="logo Visual Studio"></img>
+                                <img class="img-comp" src="./img/git.png" alt="logo Git" title="Git"></img>
+                                <img class="img-comp" src="./img/github.png" alt="logo GitHub" title="GitHub"></img>
+                                <img class="img-comp" src="./img/visualstudio.png" alt="logo Visual Studio Code" title="Visual Studio Code"></img>
                             </div>
                         </div>
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>OS :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/windows.png" alt="logo Windows"></img>
+                                <img class="img-comp" src="./img/windows.png" alt="logo Windows" title="Windows"></img>
                             </div>
                         </div>
                         <div class="conteneur-comp-sf">
                             <div class="titre-sf"><p>Autres :</p></div>
                             <div class="logos-sf">
-                                <img class="img-comp" src="./img/vba.png" alt="logo VBA"></img>
-                                <img class="img-comp" src="./img/visualbasic.svg" alt="logo Visual Basic"></img>
+                                <img class="img-comp" src="./img/vba.png" alt="logo VBA" title="VBA"></img>
+                                <img class="img-comp" src="./img/visualbasic.svg" alt="logo Visual Basic" title="Visual Basic"></img>
                             </div>
                         </div>
                     </div>

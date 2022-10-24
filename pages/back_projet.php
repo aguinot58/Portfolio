@@ -195,6 +195,8 @@
                                             <label class="form-check-label" for="chk_boot">BOOTSTRAP</label>
                                             <input class="form-check-input" type="checkbox" name="chk_sass" id="chk_sass" value="SASS">
                                             <label class="form-check-label" for="chk_sass">SASS</label>
+                                            <input class="form-check-input" type="checkbox" name="chk_less" id="chk_less" value="LESS">
+                                            <label class="form-check-label" for="chk_less">LESS</label>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -213,6 +215,8 @@
                                             <label class="form-check-label" for="chk_php">PHP</label>
                                             <input class="form-check-input" type="checkbox" name="chk_symfony" id="chk_symfony" value="SYMFONY">
                                             <label class="form-check-label" for="chk_symfony">SYMFONY</label>
+                                            <input class="form-check-input" type="checkbox" name="chk_vue" id="chk_vue" value="VUE.JS">
+                                            <label class="form-check-label" for="chk_vue">VUE.JS</label>
                                         </div>
                                     </div>
                                     <div class="row">

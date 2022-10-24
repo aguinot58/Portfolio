@@ -593,6 +593,7 @@ footer .pied a:visited{
     display:flex;
     flex-direction: row;
     margin-bottom: 15px;
+    width: 500px;
 }
 
 .conteneur-competences .conteneur-comp .conteneur-comp-sf .titre-sf{
@@ -603,7 +604,7 @@ footer .pied a:visited{
 }
 
 .conteneur-competences .conteneur-comp .conteneur-comp-sf .titre-sf p{
-    font-size: 26px;
+    font-size: 24px;
     color: white;
 }
 
@@ -616,7 +617,7 @@ footer .pied a:visited{
 .conteneur-competences .conteneur-comp .conteneur-comp-sf .logos-sf img{
     width: 50px;
     max-height: fit-content;
-    margin-right: 25px;
+    margin-right: 20px;
 }
 
 .conteneur-competences .conteneur-comp tr{
